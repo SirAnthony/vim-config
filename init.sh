@@ -1,6 +1,8 @@
 #!/usr/bin/sh
 mkdir -p autoload bundle
 curl -LSo autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+# Load modules
 git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdtree
 git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
 git submodule add https://github.com/tpope/vim-surround.git bundle/surround
@@ -14,7 +16,10 @@ git submodule add https://github.com/alfredodeza/pytest.vim.git bundle/py.test
 git submodule add https://github.com/reinh/vim-makegreen bundle/makegreen
 git submodule add https://github.com/bronson/vim-trailing-whitespace.git bundle/trailing-whitespace
 git submodule add https://github.com/jeetsukumaran/vim-buffergator.git bundle/buffergator
-git submodule add https://github.com/davidhalter/jedi-vim.git bundle/jedi-vim
+git submodule add https://github.com/davidhalter/jedi-vim.git bundle/jedi
+git submodule add https://github.com/xolox/vim-session.git bundle/session
+git submodule add https://github.com/xolox/vim-misc.git bundle/session-misc
+
 
 git submodule init
 git submodule update
