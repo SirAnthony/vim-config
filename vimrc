@@ -3,6 +3,7 @@ syntax on
 filetype plugin indent on
 let NERDTreeIgnore = ['\.pyc$', '\.o$']
 let g:jedi#popup_on_dot = 0
+let g:session_autosave = 'no'
 if has('gui_running')
   set guifont=Liberation\ Mono\ 13
 endif
