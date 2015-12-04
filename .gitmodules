@@ -3,7 +3,7 @@
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = https://github.com/tpope/vim-surround.git
@@ -30,7 +30,7 @@
 	url = https://github.com/alfredodeza/pytest.vim.git
 [submodule "bundle/makegreen"]
 	path = bundle/makegreen
-	url = https://github.com/reinh/vim-makegreen
+	url = https://github.com/reinh/vim-makegreen.git
 [submodule "bundle/tasklist"]
 	path = bundle/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim.git
@@ -52,3 +52,9 @@
 [submodule "bundle/session-misc"]
 	path = bundle/session-misc
 	url = https://github.com/xolox/vim-misc.git
+[submodule "bundle/pytest"]
+	path = bundle/pytest
+	url = https://github.com/alfredodeza/pytest.vim.git
+[submodule "bundle/typescript"]
+	path = bundle/typescript
+	url = https://github.com/leafgarland/typescript-vim.git

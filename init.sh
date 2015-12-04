@@ -2,23 +2,35 @@
 mkdir -p autoload bundle
 curl -LSo autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
+module (){
+  local bundle=$2
+  if [ "$bundle" == "" ]; then
+    bundle=$(basename $1);
+    bundle=${bundle%-vim}
+    bundle=${bundle%.vim}
+    bundle=${bundle#vim-}
+  fi
+  git submodule add -f https://github.com/$1.git bundle/$bundle
+}
+
 # Load modules
-git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdtree
-git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
-git submodule add https://github.com/tpope/vim-surround.git bundle/surround
-git submodule add https://github.com/tpope/vim-git.git bundle/git
-git submodule add https://github.com/ervandew/supertab.git bundle/supertab
-git submodule add https://github.com/mileszs/ack.vim.git bundle/ack
-git submodule add https://github.com/sjl/gundo.vim.git bundle/gundo
-git submodule add https://github.com/fs111/pydoc.vim.git bundle/pydoc
-git submodule add https://github.com/vim-scripts/pep8.git bundle/pep8
-git submodule add https://github.com/alfredodeza/pytest.vim.git bundle/py.test
-git submodule add https://github.com/reinh/vim-makegreen bundle/makegreen
-git submodule add https://github.com/bronson/vim-trailing-whitespace.git bundle/trailing-whitespace
-git submodule add https://github.com/jeetsukumaran/vim-buffergator.git bundle/buffergator
-git submodule add https://github.com/davidhalter/jedi-vim.git bundle/jedi
-git submodule add https://github.com/xolox/vim-session.git bundle/session
-git submodule add https://github.com/xolox/vim-misc.git bundle/session-misc
+module scrooloose/nerdtree
+module tpope/vim-fugitive
+module tpope/vim-surround
+module tpope/vim-git
+module ervandew/supertab
+module mileszs/ack.vim
+module sjl/gundo.vim
+module fs111/pydoc.vim
+module vim-scripts/pep8
+module alfredodeza/pytest.vim
+module reinh/vim-makegreen
+module bronson/vim-trailing-whitespace
+module jeetsukumaran/vim-buffergator
+module davidhalter/jedi-vim
+module xolox/vim-session
+module xolox/vim-misc session-misc
+module leafgarland/typescript-vim
 
 
 git submodule init
@@ -26,5 +38,7 @@ git submodule update
 git submodule foreach git submodule init
 git submodule foreach git pull origin master
 git submodule foreach git submodule update
+# Remove submodules back
+git rm -r --cached -f bundle/
 
 cp vimrc ~/.vimrc
