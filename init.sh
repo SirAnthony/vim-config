@@ -31,6 +31,7 @@ module davidhalter/jedi-vim
 module xolox/vim-session
 module xolox/vim-misc session-misc
 module leafgarland/typescript-vim
+module dense-analysis/ale
 
 
 git submodule init
